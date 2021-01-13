@@ -1,0 +1,38 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"debug.allowBreakpointsEverywhere": true,
+		"remote.restoreForwardedPorts": true,
+		"remote.SSH.defaultForwardedPorts": [
+			{
+				"localPort": 5000,
+				"remotePort": 5000,
+				"name": "Svelte"
+			},
+			{
+				"localPort": 35729,
+				"remotePort": 35729,
+				"name": "livereload"
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "pwa-chrome",
+				"request": "launch",
+				"name": "Launch Chrome against localhost",
+				"url": "http://localhost:5000",
+				"webRoot": "${workspaceFolder}/src",
+				"skipFiles": [
+					"<node_internals>/**"
+				]
+			}
+		]
+	}
+}

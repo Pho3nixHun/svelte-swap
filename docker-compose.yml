@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+    svelte-dev:
+        build: .
+        env_file:
+            - docker.env
+        container_name: svelte-dev
+        volumes:
+            - "./docker/persistent:/srv/persistent"
+            - "./:/srv/app"
+            - "./docker/node:/srv/node"
+            - "./docker/.p10k.zsh:/root/.p10k.zsh"
+            - "./docker/.zshrc:/root/.zshrc"
+        stdin_open: true
+        tty: true
