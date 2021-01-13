@@ -9,7 +9,36 @@
     <link rel='icon' type='image/png' href='/favicon.png'>
     <link rel='stylesheet' href='/build/bundle.css'>
 
+    <style>
+        html, body {
+            height: 100%;
+            display: grid;
+            place-items: center;
+        }
+        svelte-swap {
+            border: 1px solid red;
+            padding: 1rem;
+        }
+        svelte-swap div {
+            background: #ededed;
+        }
+        .fullscreen {
+            position: fixed;
+            inset: 0;
+            background: yellow;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const el = document.querySelector('#swap');
+            el.addEventListener('click', (evt) => el.toggleAttribute('active'));
+        }
+    </script>
     <script defer src='/build/bundle.js'></script>
+    <svelte-swap active id="swap">
+        <div>TEST</div>
+        <div class="fullscreen" slot="active">WORKING</div>
+    </svelte-swap>
 </head>
 
 <body>

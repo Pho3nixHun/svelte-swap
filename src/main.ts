@@ -1,12 +1,1 @@
-import '~/scss/style.scss';
-
-import App from '~/components/App.svelte';
-
-const app = new App({
-    target: document.body,
-    props: {
-        name: 'world',
-    },
-});
-
-export default app;
+export {default as default} from '~/components/Svelte-swap.svelte';
